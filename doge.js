@@ -1,7 +1,7 @@
 var shapes = {
-	"w_rect": ["dogeDough.jpg", "wizardOfDoge.gif", "dogeDance.gif", "dogeCoin.gif", "batDoge.gif", "coldDoge.gif", "firefox.gif", "windoge.jpg"],
-	"t_rect": ["dogeDonut.jpg", "dogeSelfie.jpg", "dogeSnap.jpg", "dogeGuard.jpg"],
-	"square": ["dogeSwim.gif", "dogeIntensifies.gif", "dogeWords.jpg", "dogeEatDoge.jpg", "dogeTrump.jpg", "dogeShakeSpace.gif"]
+	"w_rect": ['w1.jpg','w2.jpg','w4.jpg','w5.jpg','w6.gif','w7.jpg','w8.jpg','w9.jpg','w10.gif','w11.gif','w12.gif','w13.gif','w14.gif','w15.jpg','w16.gif','w17.jpg','w18.gif','w19.jpg'],
+	"t_rect": ['t1.jpg','t2.jpg','t3.jpg','t4.jpg','t5.gif','t10.jpg','t12.jpg','t13.jpg','t14.jpg','t15.jpg','t16.jpg','t17.jpg','t18.jpg','t19.jpg'],
+	"square": ['s1.jpg','s2.jpg','s3.jpg','s4.jpg','s5.gif','s6.gif','s7.gif','s8.jpg','s9.jpg','s10.jpg','s11.jpg','s12.jpg']
 },
 img_path = "images/doge/";
 
