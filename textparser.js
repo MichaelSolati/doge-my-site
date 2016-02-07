@@ -3,14 +3,8 @@ var dogeTalk = {
   'words': ["wow", "amaze", "excite", "doge"]
 };
 
-function chooseModifier() {
-  return (dogeTalk['modifiers'][Math.floor(Math.random() * dogeTalk['modifiers'].length)]);
-}
-function chooseWord() {
-  return (dogeTalk['words'][Math.floor(Math.random() * dogeTalk['words'].length)]+".");
-}
-
 var tags = [];
+
 tags.push(document.getElementsByTagName("h1"));
 tags.push(document.getElementsByTagName("h2"));
 tags.push(document.getElementsByTagName("h3"));
@@ -20,6 +14,20 @@ tags.push(document.getElementsByTagName("h6"));
 tags.push(document.getElementsByTagName("li"));
 tags.push(document.getElementsByTagName("a"));
 tags.push(document.getElementsByTagName("p"));
+
+var colors = ["red", "green", "blue", "pink", "orange", "yellow"];
+
+function chooseModifier() {
+  return (dogeTalk['modifiers'][Math.floor(Math.random() * dogeTalk['modifiers'].length)]);
+}
+
+function chooseWord() {
+  return (dogeTalk['words'][Math.floor(Math.random() * dogeTalk['words'].length)]+".");
+}
+
+function chooseColor() {
+  return (colors[Math.floor(Math.random() * colors.length)]);
+}
 
 for (var p = 0; p <= tags.length; p++) {
   try {
@@ -46,6 +54,7 @@ for (var p = 0; p <= tags.length; p++) {
       }
       text = splitTag.join(' ');
       tag.innerHTML = text;
+      $(tag).css('color', chooseColor());
     }
   } catch (e) {
   }
