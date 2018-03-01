@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Doge My Site",
+  "version": "0.9.0",
+  "description": "Add 'MUCH WOW' to any page on the web.",
+  "browser_action": {
+    "default_title": "SUCH WOW",
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["index.js"]
+  },
+  "permissions": ["http://*/*", "https://*/*"],
+  "icons": {
+    "128": "icon.png"
+  }
+}

@@ -1,0 +1,4 @@
+dist
+node_modules
+src/keys.ts
+.DS_Store
