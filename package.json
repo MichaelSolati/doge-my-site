@@ -5,8 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "browserify": "browserify dist/index.js -o dist/index.js",
-    "build": "tsc && cp -a ./assets/. ./dist && npm run browserify",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc && cp -a ./assets/. ./dist && npm run browserify && npm run zip",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "zip": "zip -r dist.zip dist"
   },
   "author": "Michael Solati mkslt04@gmail.com",
   "license": "ISC",
