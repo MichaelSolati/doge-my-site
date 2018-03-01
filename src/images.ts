@@ -1,4 +1,4 @@
-import { GIPHY_KEY } from './keys';
+declare let GIPHY_KEY;
 
 interface Images { wide: string[], tall: string[], square: string[], all: string[] };
 

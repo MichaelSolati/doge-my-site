@@ -5,7 +5,7 @@
     "outDir": "dist",
     "rootDir": "src",
     "sourceMap": false,
-    "declaration": true,
+    "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -16,5 +16,8 @@
       "es2016",
       "dom"
     ]
-  }
+  },
+  "exclude": [
+    "keys.ts"
+  ]
 }
