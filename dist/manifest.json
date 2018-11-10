@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Doge My Site",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "description": "Add 'MUCH WOW' to any page on the web.",
   "browser_action": {
     "default_title": "SUCH WOW",
