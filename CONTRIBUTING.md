@@ -1,10 +1,13 @@
-# Commit Message Guidelines
+# Contributing
+
+## Commit Message Guidelines
 
 We have very precise rules over how our git commit messages can be formatted.  This leads to **more
 readable messages** that are easy to follow when looking through the **project history**.  But also,
 we use the git commit messages to **generate the project change log**.
 
-## Commit Message Format
+### Commit Message Format
+
 Each commit message consists of a **header**, a **body** and a **footer**.  The header has a special
 format that includes a **type**, a **scope** and a **subject**:
 
@@ -21,12 +24,14 @@ The **header** is mandatory and the **scope** of the header is optional.
 Any line of the commit message cannot be longer 100 characters! This allows the message to be easier
 to read on GitHub as well as in various git tools.
 
-## Revert
+### Revert
+
 If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of
 the reverted commit. In the body it should say: `This reverts commit <hash>.`, where the hash is
 the SHA of the commit being reverted.
 
-## Type
+### Type
+
 Must be one of the following:
 
 * **feat**: A new feature

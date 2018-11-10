@@ -4,17 +4,19 @@
   "description": "Add 'MUCH WOW' to any page on the web.",
   "main": "dist/index.js",
   "scripts": {
-    "browserify": "browserify dist/index.js -o dist/index.js",
-    "build": "tsc && cp -a ./assets/. ./dist && npm run browserify && npm run zip",
+    "build": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "zip": "zip -r dist.zip dist"
+    "postinstall": "npm run build"
   },
   "author": "Michael Solati mkslt04@gmail.com",
   "license": "ISC",
   "devDependencies": {
-    "@types/chrome": "0.0.59",
-    "browserify": "^16.1.0",
-    "typescript": "^2.7.2"
-  },
-  "dependencies": {}
+    "@types/chrome": "0.0.75",
+    "browserify": "^16.2.3",
+    "gulp": "^3.9.1",
+    "gulp-bro": "^1.0.3",
+    "gulp-typescript": "^5.0.0-alpha.3",
+    "gulp-zip": "^4.2.0",
+    "typescript": "^3.1.6"
+  }
 }

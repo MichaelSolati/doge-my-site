@@ -11,7 +11,7 @@
   "background": {
     "scripts": ["index.js"]
   },
-  "permissions": ["http://*/*", "https://*/*"],
+  "permissions": ["http://*/*", "https://*/*", "storage"],
   "icons": {
     "128": "icon.png"
   }
