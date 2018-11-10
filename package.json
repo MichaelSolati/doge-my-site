@@ -10,6 +10,9 @@
   },
   "author": "Michael Solati mkslt04@gmail.com",
   "license": "ISC",
+  "dependencies": {
+    "dogeify-js": "^1.1.0"
+  },
   "devDependencies": {
     "@types/chrome": "0.0.75",
     "browserify": "^16.2.3",

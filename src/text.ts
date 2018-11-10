@@ -1,12 +1,4 @@
-function modifier(): string {
-  const modifiers: string[] = ['so', 'such', 'many', 'much', 'very'];
-  return (modifiers[Math.floor(Math.random() * modifiers.length)]);
-}
-
-function word(): string {
-  const words: string[] = ['wow', 'amaze', 'excite', 'doge']
-  return words[Math.floor(Math.random() * words.length)];
-}
+import * as dogeify from 'dogeify-js';
 
 function color(): string {
   const colors: string[] = ['red', 'green', 'blue', 'pink', 'orange', 'yellow'];
@@ -26,8 +18,10 @@ function text(): void {
 
   tags.forEach((tag: HTMLElement) => {
     const texts: string[] = [];
-    tag.innerText.split('([^ ]+ [^ ]+) ').forEach((text: string) => {
-      texts.push(`<span style="color: ${color()};">${modifier()}</span> <span style="color: ${color()};">${word()}</span>`);
+    tag.innerText.split('([^ ]+ [^ ]+) ').forEach((code: string) => {
+      code.split(/(?<=[\\!\\?\\.])/).forEach((text: string) => {
+        texts.push(`<span style="color: ${color()};">${(isNaN(Number(text))) ? dogeify(text) : text}</span>`);
+      });
     });
     tag.innerHTML = texts.join(' ');
   });
