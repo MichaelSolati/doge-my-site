@@ -1,25 +1,33 @@
-declare let GIPHY_KEY;
+import { GIPHY_KEY } from './keys';
 
-interface Images { wide: string[], tall: string[], square: string[], all: string[] };
+interface Images { expires: number; wide: string[], tall: string[], square: string[], all: string[] };
 
 function giphy(callback: Function): void {
-  const xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = () => {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-      const images: Images = { wide: [], tall: [], square: [], all: [] };
-      JSON.parse(xmlhttp.responseText).data.map((result: any) => {
-        const ratio: number = Number(result.images.original.width) / Number(result.images.original.height);
-        if (ratio > 1.1) { images.wide.push(result.images.original.url); }
-        if (ratio < 0.9) { images.tall.push(result.images.original.url); }
-        if (ratio <= 1.1 && ratio >= 0.9) { images.square.push(result.images.original.url); }
-        images.all.push(result.images.original.url)
-      });
-      callback(images);
+  chrome.storage.local.get(['library'], (storage) => {
+    let library: Images = storage.library;
+    if (library && library.expires > (new Date()).getTime()) {
+      callback(library);
+    } else {
+      const xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = () => {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+          library = { expires: ((new Date()).getTime() + 24 * 60 * 60 * 1000), wide: [], tall: [], square: [], all: [] };
+          JSON.parse(xmlhttp.responseText).data.map((result: any) => {
+            const ratio: number = Number(result.images.original.width) / Number(result.images.original.height);
+            const image = `https://i.giphy.com/media/${result.id}/200.gif`;
+            if (ratio > 1.1) { library.wide.push(image); }
+            if (ratio < 0.9) { library.tall.push(image); }
+            if (ratio <= 1.1 && ratio >= 0.9) { library.square.push(image); }
+            library.all.push(image)
+          });
+          chrome.storage.local.set({ library }, () => callback(library));
+        }
+      }
+      const url = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_KEY}&q=doge&limit=100&offset=0&rating=R&lang=en`;
+      xmlhttp.open('GET', url, true);
+      xmlhttp.send();
     }
-  }
-  const url = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_KEY}&q=doge&limit=100&offset=0&rating=R&lang=en`;
-  xmlhttp.open('GET', url, true);
-  xmlhttp.send();
+  });
 }
 
 function select(ratio: number, images: Images): string {
@@ -37,7 +45,7 @@ function select(ratio: number, images: Images): string {
 }
 
 function images(): void {
-  const imgElements: NodeListOf<HTMLImageElement> = <NodeListOf<HTMLImageElement>>document.getElementsByTagName('img');
+  const imgElements: HTMLCollectionOf<HTMLImageElement> = <HTMLCollectionOf<HTMLImageElement>>document.getElementsByTagName('img');
   const images: HTMLImageElement[] = Array.from(imgElements);
   giphy((results: Images) => {
     images.forEach((element: HTMLImageElement) => {
