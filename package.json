@@ -20,6 +20,6 @@
     "gulp-bro": "^1.0.3",
     "gulp-typescript": "^5.0.0-alpha.3",
     "gulp-zip": "^4.2.0",
-    "typescript": "^3.1.6"
+    "typescript": "^3.5.1"
   }
 }
