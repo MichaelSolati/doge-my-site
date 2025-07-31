@@ -20,7 +20,10 @@
   "scripts": {
     "build": "rimraf dist && vite build",
     "lint": "gts lint",
-    "fix": "gts fix"
+    "fix": "gts fix",
+    "release:major": "changelog -M && git add . && git commit -m 'chore(release): major version release' && npm version major",
+    "release:minor": "changelog -m && git add . && git commit -m 'chore(release): minor version release' && npm version minor",
+    "release:patch": "changelog -p && git add . && git commit -m 'chore(release): patch version release' && npm version patch"
   },
   "dependencies": {
     "pluralize": "^8.0.0"
@@ -29,6 +32,7 @@
     "@types/chrome": "0.1.1",
     "@types/node": "^22.7.5",
     "@types/pluralize": "^0.0.33",
+    "generate-changelog": "^1.8.0",
     "gts": "^6.0.2",
     "rimraf": "^6.0.1",
     "terser": "^5.43.1",
