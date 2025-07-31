@@ -1,1 +1,0 @@
-export const GIPHY_KEY: string = '<GIPHY API KEY HERE>';

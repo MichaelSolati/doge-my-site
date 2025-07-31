@@ -3,23 +3,37 @@
   "version": "0.10.0",
   "description": "Add 'MUCH WOW' to any page on the web.",
   "main": "dist/index.js",
-  "scripts": {
-    "build": "gulp",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "npm run build"
+  "engines": {
+    "node": "22"
   },
-  "author": "Michael Solati mkslt04@gmail.com",
+  "type": "module",
   "license": "ISC",
+  "author": "Michael Solati <mkslt04@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelSolati/doge-my-site.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MichaelSolati/doge-my-site/issues"
+  },
+  "homepage": "https://github.com/MichaelSolati/doge-my-site#readme",
+  "scripts": {
+    "build": "rimraf dist && vite build",
+    "lint": "gts lint",
+    "fix": "gts fix"
+  },
   "dependencies": {
-    "dogeify-js": "^1.1.0"
+    "pluralize": "^8.0.0"
   },
   "devDependencies": {
-    "@types/chrome": "0.0.75",
-    "browserify": "^16.2.3",
-    "gulp": "^4.0.2",
-    "gulp-bro": "^1.0.3",
-    "gulp-typescript": "^5.0.0-alpha.3",
-    "gulp-zip": "^4.2.0",
-    "typescript": "^3.1.6"
+    "@types/chrome": "0.1.1",
+    "@types/node": "^22.7.5",
+    "@types/pluralize": "^0.0.33",
+    "gts": "^6.0.2",
+    "rimraf": "^6.0.1",
+    "terser": "^5.43.1",
+    "typescript": "^5.6.3",
+    "vite": "^7.0.6",
+    "vite-plugin-static-copy": "^3.1.1"
   }
 }

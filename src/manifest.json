@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Doge My Site",
+  "action": {
+    "default_title": "SUCH WOW",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["scripting", "storage", "activeTab"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "icons": {
+    "128": "icon.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src https://api.giphy.com https://www.desiquintans.com; img-src https://i.giphy.com"
+  }
+}
