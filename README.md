@@ -1,4 +1,4 @@
-# Doge My Site
+# 🐶 Doge My Site
 
 WOW. MUCH EXTENSION. SO CHROME.
 
@@ -10,7 +10,7 @@ Ever feel like the web is just... not doge enough? Well, now you can fix that! W
 * Change the font to the one and only Comic Sans!
 * Doge-ify the text to make it much more wow!
 
-## Configuration
+## 🔧 Configuration
 
 To get started, you'll need a Giphy API key.
 
@@ -22,7 +22,7 @@ To get started, you'll need a Giphy API key.
 VITE_GIPHY_KEY="YOUR_GIPHY_KEY_HERE"
 ```
 
-## Development
+## 🧑‍💻 Development
 
 To run the extension locally for development, follow these steps:
 
@@ -44,6 +44,34 @@ To run the extension locally for development, follow these steps:
 
 Now you can make changes to the source code, run `npm run build` again, and reload the extension in Chrome to see your changes.
 
-## Such Thanks
+## 🤝 Contributing
+
+I welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Development Workflow
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feat/amazing-feature`
+3. Make your changes
+4. Run tests: `npm run test`
+5. Run linting: `npm run lint`
+6. Commit your changes: `git commit -m 'feat: add amazing feature'`
+7. Push to the branch: `git push origin feat/amazing-feature`
+8. Open a Pull Request
+
+### Code Style
+
+This project uses:
+
+* **TypeScript** for type safety
+* **ESLint** with Google TypeScript Style (GTS) for linting
+* **Prettier** for code formatting
+* **Conventional Commits** for commit messages
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## 🙌 Such Thanks
 
 ![Powered By Giphy](./assets/giphy.gif)
