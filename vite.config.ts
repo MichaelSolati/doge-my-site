@@ -11,9 +11,11 @@ export default defineConfig({
         {
           src: 'src/manifest.json',
           dest: '.',
-          transform: (content) => {
+          transform: content => {
             const packageJsonPath = path.resolve(__dirname, 'package.json');
-            const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+            const packageJson = JSON.parse(
+              fs.readFileSync(packageJsonPath, 'utf8'),
+            );
             const manifest = JSON.parse(content.toString());
 
             manifest.version = packageJson.version;
